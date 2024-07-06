@@ -128,21 +128,7 @@ def consultarImg(id):
 
 
 
-def borrrarMenuTODO():
-    try:
-        conexion = conectarbd()
-        cursor = conexion.cursor()
-        query = "DELETE FROM menu "
-        cursor.execute(query)
-        conexion.commit()
-        cursor.close()
-        return ("se procedera elimina todo")
 
-    except mysql.connector.Error as error:
-        print(f"Error al obtener los menu -> {error}")
-
-    finally:
-        desconectar(conexion)
 
 
 

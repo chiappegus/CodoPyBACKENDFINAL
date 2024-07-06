@@ -34,15 +34,14 @@
         </form>
 
         {% if file_url %}
-        <div>blah blah blah blah</div>
-
+      
         <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
 
         {% endif %}
 
 
         {% if nombre %}
-        <div>blah blah blah blah</div>
+        
         {{nombre}}
         <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
 
