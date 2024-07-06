@@ -1,0 +1,58 @@
+</html>
+{% extends './base.html' %}
+
+{% block title %}
+	pagina de login
+{% endblock %}
+	{% block js%}
+
+	<script src="{{url_for('static' , filename='js/script1.js')}}"></script>
+
+    {% endblock %}
+
+		{% block customCSS%}
+
+	<link  rel="stylesheet" href="{{url_for('static' , filename='css/styles1.css')}}">
+
+    {% endblock %}
+
+{% block body %}
+
+<div class="container">
+        <!doctype html>
+        <title>Upload new File</title>
+        <h1>Upload new File</h1>
+        <form method=post enctype=multipart/form-data>
+            <label for="nombre">Nombre de la pizza</label>
+            <input type="text" name=nombre  style="color: black;" >
+            <label for="descripcion">descripcion de la pizza</label>
+            <input type="text" name=descripcion   style="padding: 20px; color: black;" >
+            <tr><br>
+            <label for="file">Subir Imagen</label>
+            <input type=file name=file style="color: black;">
+            <input type=submit value="Subir Pizza" style="text-align: justify;color: black;"></tr>
+        </form>
+
+        {% if file_url %}
+        <div>blah blah blah blah</div>
+
+        <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
+
+        {% endif %}
+
+
+        {% if nombre %}
+        <div>blah blah blah blah</div>
+        {{nombre}}
+        <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
+
+        {% endif %}
+
+
+
+
+
+    </div>
+
+
+{% endblock %}

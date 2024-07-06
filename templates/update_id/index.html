@@ -1,0 +1,65 @@
+</html>
+{% extends './base.html' %}
+
+{% block title %}
+	pagina de login
+{% endblock %}
+	{% block js%}
+
+	<script src="{{url_for('static' , filename='js/script1.js')}}"></script>
+
+    {% endblock %}
+
+		{% block customCSS%}
+
+	<link  rel="stylesheet" href="{{url_for('static' , filename='css/styles1.css')}}">
+
+    {% endblock %}
+
+{% block body %}
+
+<div class="container">
+        <!doctype html>
+        <title>Upload new File</title>
+        <h1>Upload new File</h1>
+        <form method=post enctype=multipart/form-data>
+
+
+            <input  type="hidden" name=id  style="color: black;"  value="{{datos[0][0]}}" >
+            <label for="nombre">Nombre de la pizza</label>
+            <input type="text" name=nombre  style="color: black;"  value="{{datos[0][1]}}" >
+            <label for="descripcion" >descripcion de la pizza</label>
+            <input   value="{{datos[0][2]}}"  type="text" name=descripcion
+            maxlength=50  style="padding: 20px; color: black;">
+            <tr><br>
+            <label for="file">Subir Imagen</label>
+            <input type=file name=file style="color: black;"  value="{{datos[0][3]}}" >
+            <input type=submit value="Subir Pizza" style="text-align: justify;color: black;"></tr>
+
+
+        </form>
+
+
+
+        {% if datos[0][3] %}
+        <div><h1> FOTO ACTUAL :</h1>
+
+
+
+        <img src="{{url_for('static', filename='uploads/'+datos[0][3])}}" width="200px" height="200px">
+         </div>
+
+        {% endif %}
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-image: url(./fondo2.jpg);
+}
+
+
+
+main {
+    color: #f0ebd8 !important;
+    text-align: center;
+}
+
+.nav-link{
+    color: antiquewhite !important;
+
+}
+
+.card-body{
+    color: antiquewhite !important;
+
+}
+
+input{
+color: #fff;
+}
+
+button {
+
+  color: #1bbfa8f0;
+}
+
+
+
+

@@ -1,0 +1,111 @@
+
+{% extends './base.html' %}
+
+{% block title %}
+	pagina de login
+{% endblock %}
+	{% block js%}
+
+	<script src="{{url_for('static' , filename='js/script1.js')}}"></script>
+
+    {% endblock %}
+
+		{% block customCSS%}
+
+	<link  rel="stylesheet" href="{{url_for('static' , filename='css/styles1.css')}}">
+
+    {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+        <title>Tabla de Menús</title>
+        <h1>Tabla de Menús</h1>
+
+
+        {% if file_url %}
+        <div>blah blah blah blah</div>
+
+        <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
+
+        {% endif %}
+
+
+        {% if nombre %}
+        <div>blah blah blah blah</div>
+        {{nombre}}
+        <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
+
+
+        <div>blah blah blah blah</div>
+
+        <img src="{{url_for('static', filename='uploads/'+file_url)}}" width="200px" height="200px">
+        {% endif %}
+
+
+    {% if menus  %}
+
+    <table id="productosTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>ImagenName</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+
+
+
+
+
+
+
+
+    {% for menu in menus %}
+
+               <tbody>
+                <td>{{menu[0]}}</td>
+                <td>{{menu[1]}}</td>
+                <td>{{menu[2]}}</td>
+                <td><img src="{{url_for('static', filename='uploads/'+menu[3])}}" width="200px" height="200px"></td>
+                <td>{{menu[3]}}</td>
+
+                <td>
+
+                    <form action="/DELETE/{{menu[0]}}" method="get">
+                        <button name="forwardBtn" type="submit">Borrar</button>
+                    </form>
+
+                    <form action="/update/{{menu[0]}}" method="get">
+                        <button name="forwardBtn" type="submit">UPDATE</button>
+                    </form>
+
+                </td>
+
+                </tbody>
+
+
+
+
+    {% endfor %}
+
+
+    </table>
+
+
+
+
+    {% endif %}
+
+
+
+
+    </div>
+
+
+{% endblock %}
